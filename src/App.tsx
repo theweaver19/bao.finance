@@ -14,15 +14,16 @@ import Farms from './views/Farms'
 import Home from './views/Home'
 
 const url = new URL(window.location.toString())
-if (url.searchParams.has('ref')) {
-	document.querySelectorAll('a[href]').forEach((el) => {
-		const attrUrl = new URL(el.getAttribute('href'))
-		attrUrl.searchParams.set('ref', url.searchParams.get('ref'))
-	})
-}
+// if (url.searchParams.has('ref')) {
+	// document.querySelectorAll('a[href]').forEach((el) => {
+	// 	const attrUrl = new URL(el.getAttribute('href'))
+	// 	attrUrl.searchParams.set('ref', url.searchParams.get('ref'))
+	// })
+// }
 
 const App: React.FC = () => {
 	const [mobileMenu, setMobileMenu] = useState(false)
+	console.log("On the weave")
 
 	const handleDismissMobileMenu = useCallback(() => {
 		setMobileMenu(false)
