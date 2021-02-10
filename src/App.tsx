@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { UseWalletProvider } from 'use-wallet'
 import MobileMenu from './components/MobileMenu'
@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
 	return (
 		<Providers>
-			<Router>
+			<HashRouter>
 				<TopBar onPresentMobileMenu={handlePresentMobileMenu} />
 				<MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
 				<Switch>
@@ -46,7 +46,7 @@ const App: React.FC = () => {
 						<Farms />
 					</Route>
 				</Switch>
-			</Router>
+			</HashRouter>
 		</Providers>
 	)
 }
